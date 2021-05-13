@@ -1,11 +1,10 @@
 # Profiles REST API
 
 
----
-## Tools
+
+## DevEnvironment
 - VirtualBox
 - Vagrant
-- Atom Editor
 
 
 ---
@@ -15,45 +14,53 @@
 - `exit`
 
 
----
-## First Steps
+
+
+# Initial Project Setup
 - Initialize Git Repo
   - `git init`
-- Add README file
-- Add .gitignore file
-  https://www.toptal.com/developers/gitignore
-- Add License file
-  https://choosealicense.com/licenses/mit/
+- Add files: 
+  - README.md
+  - .gitignore  https://www.toptal.com/developers/gitignore
+  - LICENSE     https://choosealicense.com/licenses/mit/
 - Initial commit
   - `git status`
   - `git add .`
   - `git commit -am "message"`
-  - do the following as github suggest:
-  - `git remote add ...`
+  - `git remote add ...`  (github suggestion)
   - `git branch ...`
   - `git push`
 
 - Initialize Remote Git Repo
 - Add **SSH public key** for machine to the github repo
-  - https://stackoverflow.com/questions/31813080/windows-10-ssh-keys
-  - https://www.techrepublic.com/article/how-to-view-your-ssh-keys-in-linux-macos-and-windows/
-  - Windows Terminal `ssh-keygen`
+  - `ssh-keygen` (Windows Terminal)
   - view `cat ~/ssh/id_rsa.pub` or `type c:\Users\...\.ssh\id_rsa.pub`
-  - Add in github with name for machine7
+  - Add in github with name for machine
 
+
+---
 ## Initialize/Configure/Start Vagrant
-- create vagrant file in project folder by:
-  `vagrant init ubuntu/bionic64`
-- configure as required
-  https://www.udemy.com/course/django-python/learn/lecture/6954890#questions/4464262
+Create vagrant file in project folder (and configure as required):  
+  - `vagrant init ubuntu/bionic64`
 
-- in project folder use `vagrant up` which will:
-  - download base image (specified in vagrant file)
-  - use virtual box to create new virtual machine
-  - run provisioning script when it starts machine
+Dowload base image; run vm; run provisioning script on start  
+  - `vagrant up` 
 
-- use development server and connect
-  - connect to server after vagrant box is started using **SSH** command
-  - ssh needed because box is guest operating system (isolated)
+Connect to development server
   - `vagrant ssh`
   - exit with `exit`
+
+
+---
+## Python Virtual Environment
+Create virtual environment
+- `vagrant@ubuntu-bionic:/vagrant$ python -m venv ~/env`
+
+Activate venv
+- `vagrant@ubuntu-bionic:/vagrant$ source ~/env/bin/activate`
+- `vagrant@ubuntu-bionic:/vagrant$ deactivate`
+
+---
+## Python Packages
+- *requiremenets.txt*
+- `(env) vagrant@ubuntu-bionic:/vagrant$ pip install -r requirements.txt`
