@@ -14,6 +14,16 @@
 - `exit`
 
 
+---
+## Structure
+ - my_project_folder
+   - django_project
+   - sub_project_1
+   - sub_project_2
+
+- `profiles-rest-api`
+  - `preofiles_project`
+  - `profiles_api`
 
 
 # Initial Project Setup
