@@ -9,6 +9,7 @@
 
 ---
 ## Start project
+- go to project folder
 - `vagrant up`
 - `vagrant ssh`
 - `exit`
@@ -70,7 +71,13 @@ Activate venv
 - `vagrant@ubuntu-bionic:/vagrant$ source ~/env/bin/activate`
 - `vagrant@ubuntu-bionic:/vagrant$ deactivate`
 
----
+
 ## Python Packages
 - *requiremenets.txt*
 - `(env) vagrant@ubuntu-bionic:/vagrant$ pip install -r requirements.txt`
+
+
+---
+# Django commands
+- `django-admin.py startproject profiles_project .`
+- `python manage.py startapp profiles_api `
